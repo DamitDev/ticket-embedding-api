@@ -7,7 +7,7 @@ services:
     ports:
       - 8081:8000
     volumes:
-      - /opt/projects/ticket-embedding-api/database:/opt/aiops/database
+      - ./database:/opt/aiops/database
     env_file:
       - .env
     deploy:

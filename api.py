@@ -7,6 +7,9 @@ from typing import Optional
 
 from modules.manager import Manager
 from modules.iris_service import IRIS_Service
+from dotenv import load_dotenv
+
+load_dotenv()
 
 db_path = os.getenv("DB_PATH", "./database/")
 db_config = os.getenv("DB_CONFIG", "./database/config.json")
@@ -156,3 +159,7 @@ async def predict_spent_time(db_name: str, request: Request):
     return JSONResponse(status_code=200, content={
         "predicted_time": predicted_time
     })
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)

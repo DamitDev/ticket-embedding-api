@@ -1,7 +1,9 @@
-fastapi==0.111.0
+fastapi
+uvicorn[standard]
 faiss-cpu
 transformers
 datasets
 bleach
 peewee
 psycopg2-binary
+dotenv
